@@ -30,4 +30,4 @@ variable "rds_info" {
 
 # Service
 variable "profile_active" { default = "test" }
-variable "alb_internal" { default = true }
+variable "alb_internal" { default = false }
