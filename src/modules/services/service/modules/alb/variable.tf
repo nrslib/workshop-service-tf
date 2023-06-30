@@ -33,5 +33,3 @@ variable "subnets" {
 }
 variable "container_port" {}
 variable "health_check_path" {}
-variable "api_health_check_path" {}
-variable "api_port" {}

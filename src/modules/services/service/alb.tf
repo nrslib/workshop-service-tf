@@ -11,6 +11,4 @@ module "alb" {
   subnets               = var.alb_internal ? var.vpc.private_subnets : var.vpc.public_subnets
   container_port        = var.backend_container_port
   health_check_path     = var.frontend_health_check_path
-  api_health_check_path = var.backend_health_check_path
-  api_port              = var.backend_container_port
 }

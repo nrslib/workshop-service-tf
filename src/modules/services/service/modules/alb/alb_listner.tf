@@ -22,24 +22,12 @@ resource "aws_alb_listener" "test" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_alb_target_group.green.arn
+    target_group_arn = aws_alb_target_group.blue.arn
   }
 
   lifecycle {
     ignore_changes = [
       default_action
     ]
-  }
-}
-
-resource "aws_alb_listener" "api" {
-  load_balancer_arn = aws_alb.main.arn
-
-  port     = var.api_port
-  protocol = "HTTP"
-
-  default_action {
-    type             = "forward"
-    target_group_arn = aws_alb_target_group.api.arn
   }
 }

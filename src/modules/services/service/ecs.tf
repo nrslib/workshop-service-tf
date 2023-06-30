@@ -95,12 +95,6 @@ resource "aws_ecs_service" "_" {
     container_port   = var.frontend_container_port
   }
 
-  load_balancer {
-    target_group_arn = module.alb.aws_alb_target_group_api.id
-    container_name = local.backend_container_name
-    container_port = var.backend_container_port
-  }
-
   lifecycle {
     ignore_changes = [task_definition, load_balancer]
   }
