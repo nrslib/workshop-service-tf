@@ -23,7 +23,7 @@ resource "aws_alb_target_group" "blue" {
 
 resource "aws_alb_target_group" "green" {
   name        = local.tg2_name
-  port        = 80
+  port        = 8080
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
   target_type = "ip"
